@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-mongoose.set('useFindAndModify', false);
+
 // Create Schema
 const ProfileSchema = new Schema({
     user: {
