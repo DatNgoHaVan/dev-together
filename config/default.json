@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://datngo:Vandat97@devtogether-ojqki.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "mysecrettoken"
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "02c6385b5c76f620e49e",
+    "githubSecret": "ae304c62605bbfcabb0843b730a5cdce95200699"
 }
