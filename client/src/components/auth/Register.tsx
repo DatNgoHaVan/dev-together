@@ -18,7 +18,9 @@ const Register = () => {
     e.preventDefault();
     if (password !== password2) {
       console.log('Passwords do not match');
-    } else { console.log(formData); }
+    } else {
+      console.log(formData);
+    }
   }
 
   return (
