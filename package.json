@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "DatNgo",
-  "license": "DTU",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.2.4",
@@ -20,7 +20,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.12",
     "node-sass": "^4.13.0",
-    "request": "^2.88.0"
+    "react-router": "^5.1.2",
+    "request": "^2.88.0",
+    "styled-components": "^4.4.1",
+    "typescript": "^3.7.4"
   },
   "devDependencies": {
     "concurrently": "^5.0.0",
