@@ -21,7 +21,8 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "uuid": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +45,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "@types/uuid": "^3.4.6"
+  }
 }
