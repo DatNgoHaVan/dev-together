@@ -1,9 +1,9 @@
 import { Dispatch } from "redux";
-import { IActionSetAlert } from "../reducers/alert-action-types";
+import { IActionAlert } from "../reducers/alert-action-types";
 import uuid from 'uuid';
 
 export const setAlert = (msg: string, alertType: any) => {
-    return (dispatch: Dispatch<IActionSetAlert>) => {
+    return (dispatch: Dispatch<IActionAlert>) => {
         const id = uuid.v4();
         dispatch({
             type: 'SET_ALERT',

@@ -1,18 +1,18 @@
 import { IActionAlert } from './alert-action-types';
 
-const initialState = {
-  alertMsg: "",
-  alertType: null
-}
+const initialState: any = []
 
 export const alertReducer = (state = initialState, action: IActionAlert): typeof initialState => {
   switch (action.type) {
     case 'SET_ALERT':
-      return {
+      return [
         ...state,
-        alertMsg: action.alertMsg,
-        alertType: action.alertType
-      }
+        {
+          alertMsg: action.alertMsg,
+          alertType: action.alertType,
+          id: action.id
+        }
+      ]
     case 'REMOVE_ALERT':
       return {
         ...state
