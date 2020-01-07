@@ -14,9 +14,7 @@ export const alertReducer = (state = initialState, action: IActionAlert): typeof
         }
       ]
     case 'REMOVE_ALERT':
-      return {
-        ...state
-      }
+      return state.filter((alert: any) => alert.id !== action.id)
     default:
       return state;
   }
