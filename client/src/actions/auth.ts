@@ -25,7 +25,6 @@ export const loadUser = (): any => {
         data: res.data
       })
     } catch (err) {
-      console.error(err)
       dispatch({
         type: 'AUTH_ERROR'
       })
