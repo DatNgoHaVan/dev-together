@@ -10,6 +10,7 @@ const initialState = {
 export const authReducer = (state = initialState, action: IActionAuth): typeof initialState => {
   switch (action.type) {
     case 'REGISTER_SUCCESS':
+    case 'LOGIN_SUCCESS':
       localStorage.setItem('token', action.response.token);
       return {
         ...state,
@@ -19,6 +20,7 @@ export const authReducer = (state = initialState, action: IActionAuth): typeof i
       };
     case 'REGISTER_FAIL':
     case 'AUTH_ERROR':
+    case 'LOGIN_FAIL':
       localStorage.removeItem('token')
       return {
         ...state,
