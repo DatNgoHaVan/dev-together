@@ -1,4 +1,5 @@
 import { IActionAuth } from './auth-action-types';
+import { IActionLogout } from './logout-action-types';
 
 const initialState = {
   token: localStorage.getItem('token'),
@@ -7,7 +8,7 @@ const initialState = {
   user: null
 }
 
-export const authReducer = (state = initialState, action: IActionAuth): typeof initialState => {
+export const authReducer = (state = initialState, action: IActionAuth | IActionLogout): typeof initialState => {
   switch (action.type) {
     case 'REGISTER_SUCCESS':
     case 'LOGIN_SUCCESS':
@@ -21,6 +22,7 @@ export const authReducer = (state = initialState, action: IActionAuth): typeof i
     case 'REGISTER_FAIL':
     case 'AUTH_ERROR':
     case 'LOGIN_FAIL':
+    case 'LOGOUT':
       localStorage.removeItem('token')
       return {
         ...state,
