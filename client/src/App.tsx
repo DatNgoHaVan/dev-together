@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import './App.scss';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 // Redux
@@ -11,7 +11,9 @@ import store from './store';
 import Alert from './components/layout/Alert';
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/auth';
-
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute';
+import history from './utils/history';
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -24,7 +26,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <Fragment>
           <Navbar />
           <Route exact path="/" component={Landing} />
@@ -33,6 +35,7 @@ const App = () => {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>
         </Fragment>
