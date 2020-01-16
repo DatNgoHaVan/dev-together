@@ -4,6 +4,7 @@ import axios from 'axios';
 import { setAlert } from "./alert";
 import setAuthToken from "../utils/setAuthToken";
 import { IActionLogout } from "../reducers/auth/logout-action-types";
+import { IActionProfile } from "../reducers/profile/profile-action-types";
 
 interface RegisterInputObject {
   name: string,
@@ -113,7 +114,8 @@ export const login = ({ email, password }: LoginInputObject) => {
 
 //logout & Clear profile
 export const logout = () => {
-  return (dispatch: Dispatch<IActionLogout>) => {
-    dispatch({ type: 'LOGOUT' })
+  return (dispatch: Dispatch<IActionLogout | IActionProfile>) => {
+    dispatch({ type: 'CLEAR_PROFILE' });
+    dispatch({ type: 'LOGOUT' });
   }
 }
