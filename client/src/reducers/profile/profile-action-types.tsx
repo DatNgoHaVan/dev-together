@@ -12,4 +12,13 @@ export interface IProfileError {
   data: any
 }
 
-export type IActionProfile = IGetProfile | IProfileError | IClearProfile
+export interface IUpdateProfile {
+  type: 'UPDATE_PROFILE',
+  data: any
+}
+
+export type IActionProfile =
+  IGetProfile |
+  IProfileError |
+  IClearProfile |
+  IUpdateProfile;

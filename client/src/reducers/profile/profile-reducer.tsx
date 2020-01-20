@@ -11,6 +11,7 @@ const intitialState = {
 export const profileReducer = (state = intitialState, action: IActionProfile): typeof intitialState => {
   switch (action.type) {
     case 'GET_PROFILE':
+    case 'UPDATE_PROFILE':
       return {
         ...state,
         profile: action.data,
