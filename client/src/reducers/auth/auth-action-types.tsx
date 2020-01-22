@@ -25,9 +25,14 @@ export interface ILoginFail {
   type: 'LOGIN_FAIL',
 }
 
+export interface IDeleteAccount {
+  type: 'DELETE_ACCOUNT'
+}
+
 export type IActionAuth =
   IRegisterSuccess |
   IRegisterFail |
   IUserLoaded |
   IAuthError |
-  ILoginSuccess | ILoginFail;
+  ILoginSuccess | ILoginFail |
+  IDeleteAccount;
