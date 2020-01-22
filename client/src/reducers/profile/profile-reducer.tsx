@@ -27,6 +27,5 @@ export const profileReducer = (state = intitialState, action: IActionProfile): t
       return intitialState;
     default:
       return state;
-  }
-
+  };
 }
