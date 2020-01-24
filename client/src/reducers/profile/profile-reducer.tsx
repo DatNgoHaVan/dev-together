@@ -17,12 +17,24 @@ export const profileReducer = (state = intitialState, action: IActionProfile): t
         profile: action.data,
         loading: false
       };
+    case 'GET_PROFILES':
+      return {
+        ...state,
+        profiles: action.data,
+        loading: false
+      }
     case 'PROFILE_ERROR':
       return {
         ...state,
         error: action.data,
         loading: false
       };
+    case 'GET_REPOS':
+      return {
+        ...state,
+        repos: action.data,
+        loading: false
+      }
     case 'CLEAR_PROFILE':
       return intitialState;
     default:

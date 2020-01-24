@@ -17,8 +17,18 @@ export interface IUpdateProfile {
   data: any
 }
 
+export interface IGetProfiles {
+  type: 'GET_PROFILES',
+  data: any
+}
+
+export interface IGetRepos {
+  type: 'GET_REPOS',
+  data: any
+}
+
 export type IActionProfile =
-  IGetProfile |
+  IGetProfile | IGetProfiles | IGetRepos |
   IProfileError |
   IClearProfile |
   IUpdateProfile;
