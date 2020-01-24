@@ -4,6 +4,7 @@ import { IActionProfile } from '../reducers/profile/profile-action-types';
 import { Dispatch } from 'redux';
 import { IActionAuth } from '../reducers/auth/auth-action-types';
 
+// Get current user profiles
 export const getCurrentProfile = () => {
   return async (dispatch: Dispatch<IActionProfile>) => {
     try {
@@ -22,9 +23,68 @@ export const getCurrentProfile = () => {
   }
 };
 
+// Get all profiles
+export const getProfiles = () => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
+    dispatch({ type: 'CLEAR_PROFILE' });
+
+    try {
+      const res = await axios.get('/api/profile');
+
+      dispatch({
+        type: 'GET_PROFILES',
+        data: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: 'PROFILE_ERROR',
+        data: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+};
+
+// Get profile by ID
+export const getProfileById = (userId: string) => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
+    try {
+      const res = await axios.get(`/api/profile/user/${userId}`);
+
+      dispatch({
+        type: 'GET_PROFILE',
+        data: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: 'PROFILE_ERROR',
+        data: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+};
+
+// Get Github repos
+export const getGithubRepos = (username: string) => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
+    try {
+      const res = await axios.get(`/api/profile/github/${username}`);
+
+      dispatch({
+        type: 'GET_REPOS',
+        data: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: 'PROFILE_ERROR',
+        data: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+};
+
 // Create or update profile
 export const createProfile = (formData: any, history: any, edit: boolean = false) => {
-  return async (dispatch: Dispatch<IActionProfile | any>) => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
     try {
       const config = {
         headers: {
@@ -64,7 +124,7 @@ export const createProfile = (formData: any, history: any, edit: boolean = false
 
 // Add Experience
 export const addExperience = (formData: any, history: any) => {
-  return async (dispatch: Dispatch<IActionProfile | any>) => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
     try {
       const config = {
         headers: {
@@ -102,7 +162,7 @@ export const addExperience = (formData: any, history: any) => {
 
 // Add Education
 export const addEducation = (formData: any, history: any) => {
-  return async (dispatch: Dispatch<IActionProfile | any>) => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
     try {
       const config = {
         headers: {
@@ -140,7 +200,7 @@ export const addEducation = (formData: any, history: any) => {
 
 // Delete Experience
 export const deleteExperience = (id: string) => {
-  return async (dispatch: Dispatch<IActionProfile | any>) => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
     try {
       const res = await axios.delete(`/api/profile/experience/${id}`);
 
@@ -165,7 +225,7 @@ export const deleteExperience = (id: string) => {
 
 // Delete Experience
 export const deleteEducation = (id: string) => {
-  return async (dispatch: Dispatch<IActionProfile | any>) => {
+  return async (dispatch: Dispatch<IActionProfile>) => {
     try {
       const res = await axios.delete(`/api/profile/education/${id}`);
 
