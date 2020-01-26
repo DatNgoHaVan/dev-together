@@ -253,7 +253,7 @@ export const deleteAccount = (id: string) => {
   return async (dispatch: Dispatch<IActionProfile | IActionAuth>) => {
     if (window.confirm('Are you sure? This can NOT be undone!')) {
       try {
-        const res = await axios.delete(`/api/profile`);
+        await axios.delete(`/api/profile`);
 
         dispatch({
           type: 'CLEAR_PROFILE'
