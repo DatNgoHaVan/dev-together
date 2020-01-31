@@ -21,6 +21,28 @@ export interface IDeletePost {
   data: any
 }
 
+export interface IAddPost {
+  type: 'ADD_POST',
+  data: any
+}
+
+export interface IGetPost {
+  type: 'GET_POST',
+  data: any
+}
+
+export interface IAddComment {
+  type: 'ADD_COMMENT',
+  data: any
+}
+
+export interface IDeleteComment {
+  type: 'DELETE_COMMENT',
+  data: any
+}
+
 export type IActionPost =
   IGetPosts | IPostError |
-  IUpdateLikes | IDeletePost;
+  IUpdateLikes | IDeletePost |
+  IAddPost | IGetPost |
+  IAddComment | IDeleteComment;
