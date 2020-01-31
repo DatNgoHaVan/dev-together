@@ -5,6 +5,7 @@ import { StoreRootState } from '../../reducers/root/root-reducer';
 import { getPosts } from '../../actions/post';
 import { Spinner } from '../layout/Spinner';
 import PostItem from './PostItem';
+import PostForm from './PostForm';
 
 const Posts = ({ getPosts, post: { posts, loading } }: any) => {
   useEffect(() => {
@@ -17,8 +18,7 @@ const Posts = ({ getPosts, post: { posts, loading } }: any) => {
         <p className="lead">
           <i className="fas fa-user"></i> Welcome to the community
         </p>
-
-        {/* PostForm */}
+        <PostForm />
         <div className="posts">
           {posts.map((post: any) => (
             <PostItem key={post._id} post={post} />
