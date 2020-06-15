@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect } from 'react';
-import './App.scss';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import { Router, Route, Switch } from 'react-router-dom';
@@ -21,6 +20,7 @@ import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
+import './App.scss';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
