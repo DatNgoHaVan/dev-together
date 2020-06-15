@@ -20,12 +20,12 @@ const PrivateRoute: React.FC<IRouteProps> = ({
     !isAuthenticated && !loading ?
       (<Redirect to='/login' />) : (React.createElement(Component, props))
   );
-  return <Route {...rest} render={routeComponent} />
-}
+  return <Route {...rest} render={routeComponent} />;
+};
 
 PrivateRoute.propTypes = {
   auth: PropTypes.object.isRequired,
-}
+};
 
 // interface Props extends RouteProps {
 //   auth: any
@@ -44,6 +44,6 @@ PrivateRoute.propTypes = {
 
 const mapStateToProps = (state: StoreRootState, ownProps: any) => ({
   auth: state.auth
-})
+});
 
-export default connect(mapStateToProps)(PrivateRoute)
+export default connect(mapStateToProps)(PrivateRoute);

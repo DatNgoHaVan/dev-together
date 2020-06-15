@@ -58,7 +58,7 @@ const App = () => {
         </Fragment>
       </Router>
     </Provider>
-  )
-}
+  );
+};
 
 export default App;

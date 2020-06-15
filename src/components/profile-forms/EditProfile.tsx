@@ -67,7 +67,7 @@ const EditProfile = ({
   const onSubmit = (e: any) => {
     e.preventDefault();
     createProfile(formData, history, true);
-  }
+  };
 
   return (
     <Fragment>
@@ -211,6 +211,6 @@ EditProfile.propTypes = {
 
 const mapStateToProps = (state: StoreRootState) => ({
   profile: state.profile
-})
+});
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(EditProfile));
