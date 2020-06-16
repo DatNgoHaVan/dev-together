@@ -67,8 +67,8 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth, match }:
                   ))}
                 </Fragment>
               ) : (
-                  <h4>No education credentials</h4>
-                )}
+                <h4>No education credentials</h4>
+              )}
             </div>
 
             {profile.githubusername && (
@@ -78,18 +78,18 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth, match }:
         </Fragment>)
       }
     </Fragment>
-  )
-}
+  );
+};
 
 Profile.propTypes = {
   getProfileById: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-}
+};
 
 const mapStateToProps = (state: StoreRootState, ownProps: any) => ({
   profile: state.profile,
   auth: state.auth
-})
+});
 
 export default connect(mapStateToProps, { getProfileById })(Profile);

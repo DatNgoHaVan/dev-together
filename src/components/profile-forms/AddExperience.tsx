@@ -118,11 +118,11 @@ const AddExperience = ({ addExperience, history }: any) => {
         </Link>
       </form>
     </Fragment>
-  )
-}
+  );
+};
 
 AddExperience.propTypes = {
   addExperience: PropTypes.func.isRequired,
-}
+};
 
-export default connect(null, { addExperience })(withRouter(AddExperience))
+export default connect(null, { addExperience })(withRouter(AddExperience));

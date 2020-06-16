@@ -34,11 +34,11 @@ const ProfileEducation = ({
         <strong>Description: </strong> {description}
       </p>
     </div>
-  )
+  );
 };
 
 ProfileEducation.propTypes = {
   education: PropTypes.array.isRequired,
-}
+};
 
 export default ProfileEducation;

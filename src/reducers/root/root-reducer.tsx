@@ -9,6 +9,6 @@ export const RootReducer = combineReducers({
   auth: authReducer,
   profile: profileReducer,
   post: postReducer
-})
+});
 
 export type StoreRootState = ReturnType<typeof RootReducer>

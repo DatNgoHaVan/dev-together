@@ -6,7 +6,7 @@ const intitialState = {
   repos: [],
   loading: true,
   error: {}
-}
+};
 
 export const profileReducer = (state = intitialState, action: IActionProfile): typeof intitialState => {
   switch (action.type) {
@@ -22,7 +22,7 @@ export const profileReducer = (state = intitialState, action: IActionProfile): t
         ...state,
         profiles: action.data,
         loading: false
-      }
+      };
     case 'PROFILE_ERROR':
       return {
         ...state,
@@ -34,10 +34,10 @@ export const profileReducer = (state = intitialState, action: IActionProfile): t
         ...state,
         repos: action.data,
         loading: false
-      }
+      };
     case 'CLEAR_PROFILE':
       return intitialState;
     default:
       return state;
-  };
-}
+  }
+};

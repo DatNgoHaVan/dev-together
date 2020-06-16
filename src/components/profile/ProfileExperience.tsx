@@ -31,11 +31,11 @@ const ProfileExperience = ({
         <strong>Description: </strong> {description}
       </p>
     </div>
-  )
+  );
 };
 
 ProfileExperience.propTypes = {
   experience: PropTypes.array.isRequired,
-}
+};
 
 export default ProfileExperience;

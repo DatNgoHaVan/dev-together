@@ -10,5 +10,5 @@ export const Spinner = () => {
         alt='Loading...'
       />
     </Fragment>
-  )
-}
+  );
+};

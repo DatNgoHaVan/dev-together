@@ -31,11 +31,11 @@ const PostForm = ({ addPost }: any) => {
         <input type="submit" className="btn btn-dark my-1" value="Submit" />
       </form>
     </div>
-  )
-}
+  );
+};
 
 PostForm.propTypes = {
   addPost: PropTypes.func.isRequired,
-}
+};
 
-export default connect(null, { addPost })(PostForm)
+export default connect(null, { addPost })(PostForm);

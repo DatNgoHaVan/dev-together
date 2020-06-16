@@ -6,7 +6,7 @@ import { StoreRootState } from "../../reducers/root/root-reducer";
 const Landing = ({ isAuthenticated }: any) => {
   if (isAuthenticated) {
     return <Redirect to='/dashboard' />;
-  };
+  }
 
   return (
     <section className="landing">

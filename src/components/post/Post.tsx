@@ -27,7 +27,7 @@ const Post = ({ getPost, post: { post, loading }, match }: any) => {
           ))}
         </div>
       </Fragment>
-  )
+  );
 };
 
 Post.propTypes = {
@@ -37,6 +37,6 @@ Post.propTypes = {
 
 const mapStateToProps = (state: StoreRootState) => ({
   post: state.post
-})
+});
 
 export default connect(mapStateToProps, { getPost })(Post);

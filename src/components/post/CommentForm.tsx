@@ -30,11 +30,11 @@ const CommentForm = ({ postId, addComment }: any) => {
         <input type="submit" className="btn btn-dark my-1" value="Submit" />
       </form>
     </div>
-  )
-}
+  );
+};
 
 CommentForm.propTypes = {
   addComment: PropTypes.func.isRequired,
-}
+};
 
-export default connect(null, { addComment })(CommentForm)
+export default connect(null, { addComment })(CommentForm);

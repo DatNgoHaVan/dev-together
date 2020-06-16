@@ -92,7 +92,7 @@ export const addPost = (formData: any) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
+    };
 
     try {
       const res = await axios.post(`/api/posts`, formData, config);
@@ -140,7 +140,7 @@ export const addComment = (postId: string, formData: any) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
+    };
 
     try {
       const res = await axios.post(`/api/posts/comment/${postId}`, formData, config);

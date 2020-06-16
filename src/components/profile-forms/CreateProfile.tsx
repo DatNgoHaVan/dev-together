@@ -42,7 +42,7 @@ const CreateProfile = ({ createProfile, history }: any) => {
   const onSubmit = (e: any) => {
     e.preventDefault();
     createProfile(formData, history);
-  }
+  };
 
   return (
     <Fragment>

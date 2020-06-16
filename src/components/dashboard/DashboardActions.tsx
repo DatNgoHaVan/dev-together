@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DashboardActions = () => {
   return (
@@ -19,7 +19,7 @@ const DashboardActions = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DashboardActions
+export default DashboardActions;

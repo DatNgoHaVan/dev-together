@@ -1,6 +1,6 @@
 import { IActionAlert } from './alert-action-types';
 
-const initialState: any = []
+const initialState: any = [];
 
 export const alertReducer = (state = initialState, action: IActionAlert): typeof initialState => {
   switch (action.type) {
@@ -12,10 +12,10 @@ export const alertReducer = (state = initialState, action: IActionAlert): typeof
           alertType: action.alertType,
           id: action.id
         }
-      ]
+      ];
     case 'REMOVE_ALERT':
-      return state.filter((alert: any) => alert.id !== action.id)
+      return state.filter((alert: any) => alert.id !== action.id);
     default:
       return state;
   }
-}
+};

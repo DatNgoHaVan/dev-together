@@ -20,7 +20,7 @@ export const getCurrentProfile = () => {
         data: { msg: err.response.statusText, status: err.response.status }
       });
     }
-  }
+  };
 };
 
 // Get all profiles
@@ -41,7 +41,7 @@ export const getProfiles = () => {
         data: { msg: err.response.statusText, status: err.response.status }
       });
     }
-  }
+  };
 };
 
 // Get profile by ID
@@ -60,7 +60,7 @@ export const getProfileById = (userId: string) => {
         data: { msg: err.response.statusText, status: err.response.status }
       });
     }
-  }
+  };
 };
 
 // Get Github repos
@@ -79,18 +79,18 @@ export const getGithubRepos = (username: string) => {
         data: { msg: err.response.statusText, status: err.response.status }
       });
     }
-  }
+  };
 };
 
 // Create or update profile
-export const createProfile = (formData: any, history: any, edit: boolean = false) => {
+export const createProfile = (formData: any, history: any, edit = false) => {
   return async (dispatch: Dispatch<IActionProfile>) => {
     try {
       const config = {
         headers: {
           'Content-Type': 'application/json'
         }
-      }
+      };
 
       const res = await axios.post('/api/profile', formData, config);
 
@@ -109,7 +109,7 @@ export const createProfile = (formData: any, history: any, edit: boolean = false
 
       if (errors) {
         errors.forEach((error: any) => {
-          dispatch(setAlert(error.msg, 'danger', 3000))
+          dispatch(setAlert(error.msg, 'danger', 3000));
         }
         );
       }
@@ -119,7 +119,7 @@ export const createProfile = (formData: any, history: any, edit: boolean = false
         data: { msg: err.response.statusText, status: err.response.status }
       });
     }
-  }
+  };
 };
 
 // Add Experience
@@ -130,7 +130,7 @@ export const addExperience = (formData: any, history: any) => {
         headers: {
           'Content-Type': 'application/json'
         }
-      }
+      };
 
       const res = await axios.put('/api/profile/experience', formData, config);
 
@@ -148,7 +148,7 @@ export const addExperience = (formData: any, history: any) => {
 
       if (errors) {
         errors.forEach((error: any) => {
-          dispatch(setAlert(error.msg, 'danger', 3000))
+          dispatch(setAlert(error.msg, 'danger', 3000));
         });
       }
 
@@ -157,7 +157,7 @@ export const addExperience = (formData: any, history: any) => {
         data: { msg: err.response.statusText, status: err.response.status }
       });
     }
-  }
+  };
 };
 
 // Add Education
@@ -168,7 +168,7 @@ export const addEducation = (formData: any, history: any) => {
         headers: {
           'Content-Type': 'application/json'
         }
-      }
+      };
 
       const res = await axios.put('/api/profile/education', formData, config);
 
@@ -186,7 +186,7 @@ export const addEducation = (formData: any, history: any) => {
 
       if (errors) {
         errors.forEach((error: any) => {
-          dispatch(setAlert(error.msg, 'danger', 3000))
+          dispatch(setAlert(error.msg, 'danger', 3000));
         });
       }
 
@@ -195,7 +195,7 @@ export const addEducation = (formData: any, history: any) => {
         data: { msg: err.response.statusText, status: err.response.status }
       });
     }
-  }
+  };
 };
 
 // Delete Experience
@@ -220,7 +220,7 @@ export const deleteExperience = (id: string) => {
         }
       });
     }
-  }
+  };
 };
 
 // Delete Experience
@@ -245,7 +245,7 @@ export const deleteEducation = (id: string) => {
         }
       });
     }
-  }
+  };
 };
 
 // Delete Account & Profile
@@ -275,5 +275,5 @@ export const deleteAccount = (id: string) => {
         });
       }
     }
-  }
+  };
 };

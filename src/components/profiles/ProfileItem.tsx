@@ -38,7 +38,7 @@ const ProfileItem = ({ //use destructuring get props
         ))}
       </ul>
     </div>
-  )
+  );
 };
 
 ProfileItem.propsType = {

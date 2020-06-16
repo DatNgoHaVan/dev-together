@@ -124,8 +124,8 @@ const AddEducation = ({ addEducation, history }: any) => {
         </Link>
       </form>
     </Fragment>
-  )
-}
+  );
+};
 
 AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired

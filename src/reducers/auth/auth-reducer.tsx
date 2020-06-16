@@ -6,7 +6,7 @@ const initialState = {
   isAuthenticated: false,
   loading: true,
   user: null
-}
+};
 
 export const authReducer = (state = initialState, action: IActionAuth | IActionLogout): typeof initialState => {
   switch (action.type) {
@@ -24,7 +24,7 @@ export const authReducer = (state = initialState, action: IActionAuth | IActionL
     case 'LOGIN_FAIL':
     case 'LOGOUT':
     case 'DELETE_ACCOUNT':
-      localStorage.removeItem('token')
+      localStorage.removeItem('token');
       return {
         ...state,
         token: null,
@@ -37,8 +37,8 @@ export const authReducer = (state = initialState, action: IActionAuth | IActionL
         isAuthenticated: true,
         loading: false,
         user: action.data
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};

@@ -30,14 +30,14 @@ export const loadUser = (): any => {
       dispatch({
         type: 'USER_LOADED',
         data: res.data
-      })
+      });
     } catch (err) {
       dispatch({
         type: 'AUTH_ERROR'
-      })
+      });
     }
-  }
-}
+  };
+};
 
 // Register action
 export const register = ({ name, email, password }: RegisterInputObject) => {
@@ -46,7 +46,7 @@ export const register = ({ name, email, password }: RegisterInputObject) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
+    };
 
     const body = JSON.stringify({ name, email, password });
 
@@ -64,7 +64,7 @@ export const register = ({ name, email, password }: RegisterInputObject) => {
 
       if (errors) {
         errors.forEach((error: any) => {
-          dispatch(setAlert(error.msg, 'danger', 3000))
+          dispatch(setAlert(error.msg, 'danger', 3000));
         }
         );
       }
@@ -73,8 +73,8 @@ export const register = ({ name, email, password }: RegisterInputObject) => {
         type: 'REGISTER_FAIL'
       });
     }
-  }
-}
+  };
+};
 
 // Login action
 export const login = ({ email, password }: LoginInputObject) => {
@@ -83,7 +83,7 @@ export const login = ({ email, password }: LoginInputObject) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
+    };
     const body = JSON.stringify({ email, password });
 
     try {
@@ -100,7 +100,7 @@ export const login = ({ email, password }: LoginInputObject) => {
 
       if (errors) {
         errors.forEach((error: any) => {
-          dispatch(setAlert(error.msg, 'danger', 3000))
+          dispatch(setAlert(error.msg, 'danger', 3000));
         }
         );
       }
@@ -109,13 +109,13 @@ export const login = ({ email, password }: LoginInputObject) => {
         type: 'LOGIN_FAIL'
       });
     }
-  }
-}
+  };
+};
 
 //logout & Clear profile
 export const logout = () => {
   return (dispatch: Dispatch<IActionLogout | IActionProfile>) => {
     dispatch({ type: 'CLEAR_PROFILE' });
     dispatch({ type: 'LOGOUT' });
-  }
-}
+  };
+};

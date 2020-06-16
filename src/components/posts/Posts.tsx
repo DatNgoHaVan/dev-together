@@ -10,7 +10,7 @@ import PostForm from './PostForm';
 const Posts = ({ getPosts, post: { posts, loading } }: any) => {
   useEffect(() => {
     getPosts();
-  }, [getPosts])
+  }, [getPosts]);
   return (
     loading ? <Spinner /> :
       <Fragment>
@@ -25,7 +25,7 @@ const Posts = ({ getPosts, post: { posts, loading } }: any) => {
           ))}
         </div>
       </Fragment>
-  )
+  );
 };
 
 Posts.propTypes = {

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ const Login = ({ login, isAuthenticated }: any) => {
   const { email, password } = formData;
 
   const onChange = (value: any) => {
-    setFormData({ ...formData, [value.target.name]: value.target.value })
+    setFormData({ ...formData, [value.target.name]: value.target.value });
   };
 
   const onSubmit = async (e: any) => {
@@ -24,7 +24,7 @@ const Login = ({ login, isAuthenticated }: any) => {
 
   //Redirect if logged in
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />
+    return <Redirect to="/dashboard" />;
   }
 
   return (
